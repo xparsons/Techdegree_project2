@@ -34,8 +34,9 @@ showPage(1, studentSelector);
 
 const createLinkDiv = () => {
 	let ul = document.querySelector('ul');
-	let li = document.createElement('a', 'li');
+	let li = document.createElement('li');
 	li.className = 'pagination';
+	li.setAttribute('href', '#' );
 	li.innerHTML = 1;
 	ul.appendChild(li);
 };
@@ -43,11 +44,12 @@ const createLinkDiv = () => {
 
 const appendPageLinks = (studentSelector) => {
 	let pages = Math.ceil(studentSelector.length / 10);
-	for (let i = 0; i <= pages; i++) {
-		
+	for (let i = 0; i < pages; i++) {
+		createLinkDiv();
 	}
 };
 
+appendPageLinks(studentSelector);
 
 // Add functionality to the pagination buttons so that they show and hide the correct items
 // Tip: If you created a function above to show/hide list items, it could be helpful here
