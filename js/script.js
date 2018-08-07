@@ -17,9 +17,10 @@ const hideList = (studentSelector) => {
 };
 
 
-// Create a function to hide all of the items in the list excpet for the ten you want to show
+// Create a function to hide all of the items in the list except for the ten you want to show
 const showPage = (pageNumber, studentSelector) => {
 	hideList(studentSelector);
+	
 	for (let i = 0; i < studentSelector.length; i++) {
 	}
 };
