@@ -36,8 +36,7 @@ const createLinkDiv = () => {
 	let ul = document.querySelector('ul');
 	let li = document.createElement('li');
 	ul.className='pagination';
-	li.setAttribute('href', '#' );
-	li.innerHTML = 1;
+	li.innerHTML = '<a href="#">1</a>';
 	ul.appendChild(li);
 };
 
@@ -46,8 +45,8 @@ const appendPageLinks = (studentSelector) => {
 	let pageNum = 1;
 	let pages = Math.ceil(studentSelector.length / 10);
 	for (let i = 0; i < pages; i++) {
-		createLinkDiv();
-		
+			pageNum+=1;
+			createLinkDiv();
 	}
 };
 
