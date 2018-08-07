@@ -6,9 +6,7 @@ FSJS project 2 - List Filter and Pagination
 // Add variables that store DOM elements you will need to reference and/or manipulate
 const listContainer = document.getElementsByClassName('.student-list');
 const studentSelector = document.querySelectorAll('li');
-let page = 1;
-const studentsPerPage = 9;
-let pageNumber = 1;
+
 
 
 // hideList function hides all students from the page
