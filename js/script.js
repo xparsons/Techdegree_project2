@@ -20,12 +20,13 @@ const hideList = (studentSelector) => {
 // Create a function to hide all of the items in the list except for the ten you want to show
 const showPage = (studentSelector,page) => {
 	hideList(studentSelector);
-	let pages = page * 10;
-	
+	for (let i = 0; i < studentSelector.length; i++) {
+		if (studentSelector[i] > 0 && studentSelector[i] < 10) {
+			studentSelector[i].style.display = 'block';
+			}
+	}
 };
 showPage();
-
-// Tip: Keep in mind that with a list of 54 studetns, the last page will only display four
 
 
 // Create and append the pagination links - Creating a function that can do this is a good approach
