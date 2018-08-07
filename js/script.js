@@ -43,7 +43,7 @@ const createLinkDiv = () => {
 
 const appendPageLinks = (studentSelector) => {
 	let pages = Math.ceil(studentSelector.length / 10);
-	for (var i = 0; i <= pages; i++) {
+	for (let i = 0; i <= pages; i++) {
 		
 	}
 };
