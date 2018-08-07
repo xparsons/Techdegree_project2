@@ -16,12 +16,14 @@ const hideList = (studentSelector) => {
 	} 
 };
 
-hideList(studentSelector); 
 
 // Create a function to hide all of the items in the list except for the ten you want to show
-const showPage = (pageNumber, studentSelector) => {
+const showPage = (studentSelector,page) => {
+	hideList(studentSelector);
+	let pages = page * 10;
+	
 };
-
+showPage();
 
 // Tip: Keep in mind that with a list of 54 studetns, the last page will only display four
 
