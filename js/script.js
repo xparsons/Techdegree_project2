@@ -7,7 +7,7 @@ FSJS project 2 - List Filter and Pagination
 const listContainer = document.getElementsByClassName('.student-list');
 const studentSelector = document.querySelectorAll('li');
 const pageContainer = document.getElementsByClassName('.page')
-
+let pageNum = 1;
 
 // function to hide all students from page
 const hideList = (studentSelector) => {
@@ -32,22 +32,21 @@ showPage(1, studentSelector);
 
 // Create and append the pagination links - Creating a function that can do this is a good approach
 
-const createLinkDiv = () => {
+const createLinkDiv = (pageNum) => {
 	let ul = document.querySelector('ul');
 	let li = document.createElement('li');
 	ul.className='pagination';
-	li.innerHTML = '<a href="#">1</a>';
+	li.innerHTML = `<a href="#">${pageNum}</a>`;
 	ul.appendChild(li);
 };
 
 
 const appendPageLinks = (studentSelector) => {
-	let pageNum = 1;
 	let pages = Math.ceil(studentSelector.length / 10);
 	for (let i = 0; i < pages; i++) {
-			pageNum+=1;
-			createLinkDiv();
+		createLinkDiv(pageNum);
 	}
+	
 };
 
 appendPageLinks(studentSelector);
