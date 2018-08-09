@@ -22,11 +22,12 @@ const hideList = (studentSelector) => {
 // function that shows only the first ten students
 const showPage = (page, studentSelector) => {
 	hideList(studentSelector);
+	let showStudentList = ( page * 10 ); 
+	console.log(showStudentList);
 	for (let i = 0; i < studentSelector.length; i++) {
-		page = 1;
-		if ( i >= 0 && i < 10) {
+		if ( i >= (showStudentList - 10) && i < showStudentList) {
 			studentSelector[i].style.display = 'block';
-			}
+			} 	
 	}
 };
 showPage(1, studentSelector);
@@ -48,11 +49,15 @@ const appendPageLinks = (studentSelector) => {
 	let pages = Math.ceil(studentSelector.length / 10);
 	for (let i = 0; i < pages; i++) {
 		createLinkDiv(i + 1);
-	}
+	} 
+	
 	
 };
 
 appendPageLinks(studentSelector);
 
 // Add functionality to the pagination buttons so that they show and hide the correct items
+
 // Tip: If you created a function above to show/hide list items, it could be helpful here
+
+
