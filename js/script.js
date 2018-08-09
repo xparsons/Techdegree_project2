@@ -1,4 +1,3 @@
-
 /******************************************
 Treehouse Techdegree:
 FSJS project 2 - List Filter and Pagination
@@ -8,6 +7,7 @@ FSJS project 2 - List Filter and Pagination
 const listContainer = document.getElementsByClassName('.student-list');
 const studentSelector = document.querySelectorAll('li');
 const pageContainer = document.getElementsByClassName('.page')
+const paginationDiv = document.createElement('div');
 
 
 
@@ -19,18 +19,17 @@ const hideList = (studentSelector) => {
 };
 
 
-// function that shows only the first ten students
+// function that shows only the first ten students by default
 const showPage = (page, studentSelector) => {
 	hideList(studentSelector);
 	let showStudentList = ( page * 10 ); 
-	console.log(showStudentList);
 	for (let i = 0; i < studentSelector.length; i++) {
 		if ( i >= (showStudentList - 10) && i < showStudentList) {
 			studentSelector[i].style.display = 'block';
 			} 	
 	}
 };
-showPage(1, studentSelector);
+
 
 
 // Create and append the pagination links - Creating a function that can do this is a good approach
@@ -49,12 +48,13 @@ const appendPageLinks = (studentSelector) => {
 	let pages = Math.ceil(studentSelector.length / 10);
 	for (let i = 0; i < pages; i++) {
 		createLinkDiv(i + 1);
-	} 
+	}
 	
 	
 };
 
 appendPageLinks(studentSelector);
+showPage(6,studentSelector);
 
 // Add functionality to the pagination buttons so that they show and hide the correct items
 
