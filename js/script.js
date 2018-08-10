@@ -39,11 +39,8 @@ const createLinkDiv = (pageNum) => {
 	let li = document.createElement('li');
 	ul.className='pagination';
 	li.innerHTML = `<a href="#">${pageNum}</a>`;
+	li.onclick = showPage(pageNum, studentSelector);
 	ul.appendChild(li);
-	this.addEventListener('click', () => {
-		showPage(pageNum, studentSelector);
-	});
-	
 };
 
 
