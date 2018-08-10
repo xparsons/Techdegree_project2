@@ -7,8 +7,6 @@ FSJS project 2 - List Filter and Pagination
 const listContainer = document.getElementsByClassName('.student-list');
 const studentSelector = document.querySelectorAll('li');
 const pageContainer = document.getElementsByClassName('.page')
-const paginationDiv = document.createElement('div');
-
 
 
 // function to hide all students from page
@@ -26,8 +24,8 @@ const showPage = (page, studentSelector) => {
 	for (let i = 0; i < studentSelector.length; i++) {
 		if ( i >= (showStudentList - 10) && i < showStudentList) {
 			studentSelector[i].style.display = 'block';
-			} 	
-	}
+		} 	
+	}	
 };
 
 
@@ -49,6 +47,7 @@ const createLinkDiv = (pageNum) => {
 	ul.className='pagination';
 	li.innerHTML = `<a href="#">${pageNum}</a>`;
 	ul.appendChild(li);
+	// Listens for click on the list div and assigns pageNum value to showPage
 	ul.lastChild.addEventListener('click', () => {
 		showPage(pageNum,studentSelector);
 	});
@@ -60,10 +59,5 @@ const createLinkDiv = (pageNum) => {
 appendPageLinks(studentSelector);
 showPage(1, studentSelector);
 
-
-
-// Add functionality to the pagination buttons so that they show and hide the correct items
-
-// Tip: If you created a function above to show/hide list items, it could be helpful here
 
 
