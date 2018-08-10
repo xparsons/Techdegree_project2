@@ -34,25 +34,28 @@ const showPage = (page, studentSelector) => {
 
 // Create and append the pagination links - Creating a function that can do this is a good approach
 
-const createLinkDiv = (pageNum) => {
-	let ul = document.querySelector('ul');
-	let li = document.createElement('li');
-	ul.className='pagination';
-	li.innerHTML = `<a href="#">${pageNum}</a>`;
-	li.onclick = showPage(pageNum, studentSelector);
-	ul.appendChild(li);
-};
-
 
 const appendPageLinks = (studentSelector) => {
 	let pages = Math.ceil(studentSelector.length / 10);
 	for (let i = 0; i < pages; i++) {
 		createLinkDiv(i + 1);
-	
 	}
 	
+};
+
+const createLinkDiv = (pageNum) => {
+	let ul = document.querySelector('ul');
+	let li = document.createElement('li');
+	ul.className='pagination';
+	li.innerHTML = `<a href="#">${pageNum}</a>`;
+	ul.appendChild(li);
+	ul.lastChild.addEventListener('click', () => {
+		showPage(pageNum,studentSelector);
+	});
 	
 };
+
+
 
 appendPageLinks(studentSelector);
 showPage(1, studentSelector);
