@@ -40,6 +40,9 @@ const createLinkDiv = (pageNum) => {
 	ul.className='pagination';
 	li.innerHTML = `<a href="#">${pageNum}</a>`;
 	ul.appendChild(li);
+	this.addEventListener('click', () => {
+		showPage(pageNum, studentSelector);
+	});
 	
 };
 
@@ -48,13 +51,16 @@ const appendPageLinks = (studentSelector) => {
 	let pages = Math.ceil(studentSelector.length / 10);
 	for (let i = 0; i < pages; i++) {
 		createLinkDiv(i + 1);
+	
 	}
 	
 	
 };
 
 appendPageLinks(studentSelector);
-showPage(6,studentSelector);
+showPage(1, studentSelector);
+
+
 
 // Add functionality to the pagination buttons so that they show and hide the correct items
 
