@@ -1,4 +1,4 @@
-# Techdegree Project 2 - List filtering and Pagination
+# Techdegree Project 2 - List Filtering and Pagination
 
 For this project I used JavaScript to dynamically add "pages" to the site, in order to create a better user experience. 
 With a list of over 50 individuals, scrolling to see the entire list would likely cause the audience to leave as fast 
